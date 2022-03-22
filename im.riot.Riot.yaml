@@ -1,8 +1,8 @@
 app-id: im.riot.Riot
 base: org.electronjs.Electron2.BaseApp
-base-version: '21.08'
+base-version: "21.08"
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: "21.08"
 sdk: org.freedesktop.Sdk
 command: element
 rename-icon: element-desktop
@@ -17,6 +17,8 @@ finish-args:
   - --share=ipc
   # Required for experimental wayland support
   - --socket=wayland
+  # ???
+  - --socket=system-bus
   # Required to provide Call functionality
   - --socket=pulseaudio
   - --device=all
@@ -57,7 +59,7 @@ modules:
     build-options:
       no-debuginfo: true
     cleanup:
-      - '*'
+      - "*"
     sources:
       - type: git
         url: https://github.com/tcltk/tcl.git
